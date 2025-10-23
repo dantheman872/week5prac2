@@ -2,7 +2,8 @@ let ball = {
     x: 50,
     y: 50,
     speedX: 3,
-    speedY: 3
+    speedY: 3,
+    dia: 100
 }
 
 function setup() {
@@ -11,12 +12,14 @@ function setup() {
 
 function draw() {
     background(255);
-    circle(ball.x, ball.y, 100);
+    circle(ball.x, ball.y, ball.dia);
     if (ball.x < 50 || ball.x > width - 50) {
         ball.speedX *= -1;
+        ball.dia += -1
     }
     if (ball.y < 50 || ball.y > height - 50) {
         ball.speedY *= -1;
+        ball.dia += -1
     }
     ball.x += ball.speedX;
     ball.y += ball.speedY;
