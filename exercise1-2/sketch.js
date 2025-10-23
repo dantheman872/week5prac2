@@ -13,11 +13,11 @@ function setup() {
 function draw() {
     background(255);
     circle(ball.x, ball.y, ball.dia);
-    if (ball.x < 50 || ball.x > width - 50) {
+    if (ball.x < ball.dia/ 2 || ball.x > width - ball.dia /2) {
         ball.speedX *= -1;
         ball.dia += -1
     }
-    if (ball.y < 50 || ball.y > height - 50) {
+    if (ball.y < ball.dia /2 || ball.y > height - ball.dia /2) {
         ball.speedY *= -1;
         ball.dia += -1
     }
